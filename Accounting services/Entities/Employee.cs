@@ -1,13 +1,19 @@
-﻿using ItServiceAccounting.Entities.Enums;
+using System.ComponentModel.DataAnnotations;
+using ItServiceAccounting.Entities.Enums;
 
 namespace ItServiceAccounting.Entities;
 
 public class Employee
 {
+    protected Employee() { }
+
+    [Key]
     public int Id { get; private set; }
 
+    [Required]
     public string FirstName { get; private set; } = string.Empty;
 
+    [Required]
     public string LastName { get; private set; } = string.Empty;
 
     public EmployeePost EmployeePost { get; private set; }

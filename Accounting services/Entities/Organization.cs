@@ -1,11 +1,17 @@
-﻿namespace ItServiceAccounting.Entities;
+using System.ComponentModel.DataAnnotations;
+namespace ItServiceAccounting.Entities;
 
 public class Organization
 {
+    protected Organization() { }
+
+    [Key]
     public int Id { get; private set; }
 
+    [Required]
     public string Name { get; private set; } = string.Empty;
 
+    [Required]
     public string Inn { get; private set; } = string.Empty;
 
     public string ContactPerson { get; private set; } = string.Empty;
